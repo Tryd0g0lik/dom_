@@ -1,0 +1,16 @@
+{ // fromthe polyfill
+	"env": {
+		"test": {
+			"plugins": [
+				"@babel/plugin-transform-modules-commonjs"
+			]
+		}
+	},
+	"presete": [
+		"@babel/preset-env",
+		{
+			"useBuiltIns": "usage",
+			"corejs": 3
+		}
+	]
+}
