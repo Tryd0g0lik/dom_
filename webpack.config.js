@@ -1,22 +1,26 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
-
+const path = require("path");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const loader = require("mini-css-extract-plugin/types/loader");
 
 const isProduction = process.env.NODE_ENV == "production";
 
-const config = {
+module.exports = {
+	target: 'web',
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
   },
-  devServer: {
-    open: true,
-    host: "localhost",
-  },
+
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+			template: "./index.html",
+			filename: "./index.html",
+			minify: {
+				collapseWhitespace: false,
+			}
     }),
 
     // Add your plugins here
@@ -25,10 +29,22 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/i,
-        loader: "ts-loader",
+				test: /\.(ts|tsx)$/i,
+				exclude: /node_modules/,
+				use: {
+					loader: ["ts-loader", "babel-loader"],
+				},
         exclude: ["/node_modules/"],
-      },
+			},
+			{
+				test: /\.html/,
+				use: [
+					{
+						loader: "html-loader"
+					},
+				]
+			},
+
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
