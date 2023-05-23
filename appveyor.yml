@@ -20,8 +20,7 @@ install:
 
 build: off
 build_script: yarn run bbl
-after_build: yarn run build
-test_build: yarn run lint &&  yarn run test
+after_build: yarn run build && yarn run lint &&  yarn run test
 deploy: off
 
 deploy_script:  # скрипт развёртывания

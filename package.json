@@ -47,7 +47,7 @@
 		"test:run": "yarn run test -- --coverage",
 		"prepare": "husky install",
 		"husk": "yarn run prepare",
-		"pushing": "git push origin master"
+		"push": "git push origin master"
 	},
 	"dependencies": {},
 	"husky": {
