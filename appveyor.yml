@@ -32,5 +32,5 @@ deploy_script:  # скрипт развёртывания
   # При аутентификации с помощью токена доступа `x-oauth-basic` используется в качестве заглушки пароля
   - ps: Set-Content -Path  "$HOME/.git-credentials" -Value "https://$GITHUB_TOKEN:x-oauth-basic@github.com"  -NoNewline
 
-  - ps: yarn add push-dir --dir=dist --branch=master --force --verbose
+  - yarn add push-dir --dir=dist --branch=master --force --verbose
 
