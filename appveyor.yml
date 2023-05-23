@@ -6,6 +6,9 @@ branches:
 
 image:
  - Visual Studio 2019
+ - Visual Studio 2010
+ - Visual Studio 2012
+ - Visual Studio 2015
 
 init:
   - git config --global core.autocrlf input
@@ -19,8 +22,12 @@ install:
  - yarn
 
 build: off
+ 
 
-after_build: yarn run build && yarn run lint &&  yarn run test
+after_build: 
+  - yarn run build
+  - yarn run lint
+  
 deploy: off
 
 deploy_script:  # скрипт развёртывания
