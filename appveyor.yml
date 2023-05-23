@@ -16,7 +16,7 @@ cache:
   - node_modules
 
 install:
- - yarn add
+ - yarn
 
 build: off
 build_script: yarn run bbl
