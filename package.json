@@ -41,7 +41,6 @@
 		"build": "webpack --config ./webpack.prod.js",
 		"watch": "webpack --watch",
 		"serve": "webpack serve",
-
 		"lint": "eslint .",
 		"test": "jest",
 		"test:run": "yarn run test -- --coverage",
