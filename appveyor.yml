@@ -1,5 +1,11 @@
 version: 1.0.{build}-{branch}
-
+assembly_info:
+ - patch: true
+ - file: MyVersion.cs
+ - assembly_version: '{version}'
+ - assembly_file_version: '{version}'
+ - assembly_informational_version: '{version}-rc1'
+  
 branches:
   only:
     - master
@@ -8,9 +14,11 @@ image:
  - Visual Studio 2010
  - Visual Studio 2012
  - Visual Studio 2015
- - Visual Studio 2019
 
-
+platform: 
+  - x64
+  - x86
+  
 init:
   - git config --global core.autocrlf input
 
@@ -38,7 +46,8 @@ deploy_script:  # скрипт развёртывания
   - git config --global user.name Tryd0g0lik
   - git config --global user.email work80@mail.ru
   # При аутентификации с помощью токена доступа `x-oauth-basic` используется в качестве заглушки пароля
-  - ps: Set-Content -Path  "$HOME/.git-credentials" -Value "https://$GITHUB_TOKEN:x-oauth-basic@github.com"  -NoNewline
+  #- ps: Set-Content -Path  "$HOME/.git-credentials" -Value "https://$GITHUB_TOKEN:x-oauth-basic@github.com"  -NoNewline
+  -  ps: Write-Host "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials" -NoNewline
 
   - yarn add push-dir --dir=dist --branch=master --force --verbose
 
