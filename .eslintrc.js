@@ -6,7 +6,7 @@ module.exports = {
 	},
 	extends: [
 		'airbnb-base',
-
+		"plugin:import/errors"
 
 	],
 	overrides: [

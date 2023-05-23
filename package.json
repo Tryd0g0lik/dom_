@@ -41,13 +41,13 @@
 		"build": "webpack --config ./webpack.prod.js",
 		"watch": "webpack --watch",
 		"serve": "webpack serve",
+		"bbl": "babel src -d dist",
 		"lint": "eslint .",
 		"test": "jest",
 		"test:run": "yarn run test -- --coverage",
 		"prepare": "husky install",
 		"husk": "yarn run prepare",
-		"pushing": "git push origin master",
-		"push": "yarn run pushing"
+		"pushing": "git push origin master"
 	},
 	"dependencies": {},
 	"husky": {

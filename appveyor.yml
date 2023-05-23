@@ -1,0 +1,36 @@
+version: 1.0.{build}-{branch}
+
+branches:
+  only:
+    - master
+
+image:
+ - Visual Studio 2019
+
+init:
+  - git config --global core.autocrlf input
+
+stack: node 18.12.0
+
+cache:
+  - node_modules
+
+install:
+ - yarn add
+
+build: off
+build_script: yarn run bbl
+after_build: yarn run build
+test_build: yarn run lint &&  yarn run test
+deploy: off
+
+deploy_script:  # скрипт развёртывания
+# https://www.appveyor.com/docs/how-to/git-push/
+# https://www.appveyor.com/docs/how-to/git-push/#adding-access-token-to-credential-store
+  - git config --global credential.helper store #включает кеширование учетных данных
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  # При аутентификации с помощью токена доступа `x-oauth-basic` используется в качестве заглушки пароля
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
+
