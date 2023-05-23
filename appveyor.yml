@@ -19,7 +19,7 @@ install:
  - yarn
 
 build: off
-build_script: yarn run bbl
+
 after_build: yarn run build && yarn run lint &&  yarn run test
 deploy: off
 
