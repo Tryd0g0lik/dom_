@@ -1,9 +1,9 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 const path = require("path");
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const miniCssExtractPlugin = require("mini-css-extract-plugin");
-const loader = require("mini-css-extract-plugin/types/loader");
+// const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const TsconfigPathPlugin = require("tsconfig-paths-webpack-plugin");
+// const loader = require("mini-css-extract-plugin/types/loader");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -23,18 +23,25 @@ module.exports = {
 			}
     }),
 
+		new TsconfigPathPlugin({
+			configFile: "./tsconfig.json"
+		})
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
   module: {
     rules: [
-      {
+			{
+				exclude: ["/node_modules/"],
 				test: /\.(ts|tsx)$/i,
 				exclude: /node_modules/,
 				use: {
 					loader: ["ts-loader", "babel-loader"],
 				},
-        exclude: ["/node_modules/"],
+				options: {
+					transpileOnly: true,
+				},
+
 			},
 			{
 				test: /\.html/,
@@ -55,15 +62,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
-  },
-};
+		extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
 
-module.exports = () => {
-  if (isProduction) {
-    config.mode = "production";
-  } else {
-    config.mode = "development";
-  }
-  return config;
+	},
 };

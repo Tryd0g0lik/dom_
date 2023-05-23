@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
-const common = require("webpack.config");
+const { merge } = require("webpack-merge");
+const common = require("./webpack.config");
 const ESLintPlugin = require("eslint-webpack-plugin");
 
 

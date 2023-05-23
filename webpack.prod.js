@@ -2,7 +2,7 @@ const { merge } = require("webpack-marge");
 const common = require("./webpack.config");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-module.exports = marge(common, {
+module.exports = merge(common, {
 	mode: "productions",
 	plugins: [
 		new HtmlWebPackPlugin({
