@@ -1,4 +1,4 @@
-root = true
+root = false
 
 [*]
 charset = "utf-8"
@@ -6,11 +6,13 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 
 
-[*.(JS, css)]
+[*.(ts, js, css)]
 curly_bracker_next_line = true
-indent_size = 2
+indent_size = 1
 indent_style = tab
-endof_line = lf
+end_of_line = lf
+# игнорируем длинные строки
+max_line_length = off
 
 
 [*.min.*]

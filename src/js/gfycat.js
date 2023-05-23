@@ -1,8 +1,11 @@
 class Main {
-	constructor() { }
+	constructor() {
+		this.table = null;
+	}
 
 	get_html_table() {
-		let table = document.createElement('table');
-
+		let table = [];
+		table = document.createElement('table');
+		return table;
 	}
 }
