@@ -5,9 +5,7 @@ branches:
     - master
 
 image:
- - Visual Studio 2010
- - Visual Studio 2012
- - Visual Studio 2015
+ - Visual Studio 2019
 
 platform: 
   - x64
