@@ -30,6 +30,6 @@ deploy_script:  # скрипт развёртывания
   - git config --global user.name Tryd0g0lik
   - git config --global user.email work80@mail.ru
   # При аутентификации с помощью токена доступа `x-oauth-basic` используется в качестве заглушки пароля
-  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials" -NoNewline
+  - ps: Set-Content -Path  "$HOME/.git-credentials" -Value "https://$GITHUB_TOKEN:x-oauth-basic@github.com"  -NoNewline
   - yarn run push-dir --dir=dist --branch=gh-pages --force --verbose
 
