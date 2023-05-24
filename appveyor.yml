@@ -34,7 +34,13 @@ artifacts:
   path: '\dist/to/file.exe\'
   name: dom_netologe
 
- 
+notifications:
+- provider: Email
+  to:
+  - '%SMTP_TO%'
+  subject: 'Build %APPVEYOR_BUILD_VERSION% %APPVEYOR_BUILD_STATUS%'
+  body: |
+    Build %APPVEYOR_BUILD_VERSION% finished with status %APPVEYOR_BUILD_STATUS%.
 
 after_build:
   - yarn run build
