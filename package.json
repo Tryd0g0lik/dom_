@@ -1,8 +1,8 @@
 {
 	"name": "my-webpack-project",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "My webpack project",
-	"main": "index.js",
+	"main": "index.ts",
 	"repository": "https://github.com/Tryd0g0lik/dom_netologe.git",
 	"author": "Tryd0g0lik <work80@mail.ru>",
 	"license": "MIT",
@@ -12,7 +12,7 @@
 		"@babel/preset-env": "^7.21.5",
 		"@typescript-eslint/eslint-plugin": "^5.43.0",
 		"@webpack-cli/generators": "^3.0.4",
-		
+
 		"babel-jest": "^29.5.0",
 		"babel-loader": "^9.1.2",
 		"browserslist": "^4.21.5",
@@ -42,9 +42,7 @@
 		"build": "webpack --config ./webpack.prod.js",
 		"watch": "webpack --watch",
 		"serve": "webpack serve",
-		"lint": "eslint .",
-		"test": "jest",
-		"test:run": "yarn run test -- --coverage",
+		"lint": "eslint",
 		"prepare": "husky install",
 		"husk": "yarn run prepare",
 		"pushing": "git push origin master"

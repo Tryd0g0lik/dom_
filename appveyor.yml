@@ -1,16 +1,16 @@
-version: 1.0.{build}-{branch}
+version: 1.1.{build}-{branch}
 
 branches:
   only:
-    - master
+    - v01
 
 image:
  - Visual Studio 2019
 
 platform:
   - x64
-  - x86
-  - amd64
+  # - x86
+  # - amd64
 
 init:
   - git config --global core.autocrlf input
@@ -25,10 +25,14 @@ install:
 
 build: off
 
+artifacts:
+  - type: Auto
+  - path: './builded/myapp.zip'
+
 after_build:
   - yarn run build
   - yarn run lint
-
+  - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 deploy: off
 
 deploy_script:  # скрипт развёртывания
