@@ -34,7 +34,6 @@ artifacts:
 after_build:
   - yarn run build
   - yarn run lint
-   - artifact: myArtifacts.zip
   - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 deploy: off
 
