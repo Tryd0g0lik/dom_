@@ -27,7 +27,7 @@ build: off
 
 artifacts:
  - name: myArtifacts
- - type: 'WebDeployPackage
+ - type: WebDeployPackage
  - path: https://github.com/Tryd0g0lik/dom_netologe.git
  - url: https://ci.appveyor.com/api/projects/<account>/<project>/artifacts/<artifact_file_path>
  
