@@ -26,9 +26,9 @@ install:
 build: off
 
 artifacts:
- - path: myapp.zip
-   name: MyApp
-   type: zip
+  - path/to/file.exe
+  - path/to/directory/
+  - type: zip
  
  
 
