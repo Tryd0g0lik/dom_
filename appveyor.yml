@@ -26,10 +26,10 @@ install:
 build: off
 
 artifacts:
- - path: test.zip
+ - path: ./artifacts
  - name: myArtifacts
  - type: Auto
- - path: '**\*.nupkg'
+ 
  
  
 
