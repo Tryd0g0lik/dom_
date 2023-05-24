@@ -27,14 +27,14 @@ build: off
 
 artifacts:
  - name: myArtifacts
- - type: WebDeployPackage
- - path: https://github.com/Tryd0g0lik/dom_netologe.git
- - url: https://ci.appveyor.com/api/projects/<account>/<project>/artifacts/<artifact_file_path>
+ - type: Auto
+ - path: artifacts
  
 
 after_build:
   - yarn run build
   - yarn run lint
+  artifact: myArtifacts.zip
   - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 deploy: off
 
