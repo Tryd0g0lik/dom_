@@ -28,7 +28,7 @@ build: off
 artifacts:
  - path: myapp.zip
    name: MyApp
- 
+   type: zip
  
  
 
