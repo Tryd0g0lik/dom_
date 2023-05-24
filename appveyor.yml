@@ -28,7 +28,7 @@ build: off
 artifacts:
  - name: myArtifacts
  - type: Auto
- - path: artifacts
+ - path: .
  
 
 after_build:
