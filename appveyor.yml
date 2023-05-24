@@ -32,7 +32,6 @@ branches:
     
 artifacts:
   - path: '\dist/to/file.exe\'
-  - name: dom_netologe
 
 
 after_build:
