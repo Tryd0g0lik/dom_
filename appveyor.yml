@@ -26,9 +26,8 @@ install:
 build: off
 
 artifacts:
- - path: ./artifacts
-   name: myArtifacts
-   type: Auto
+ - path: myapp.zip
+   name: MyApp
  
  
  
