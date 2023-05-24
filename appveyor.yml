@@ -27,8 +27,8 @@ build: off
 
 artifacts:
  - path: ./artifacts
- - name: myArtifacts
- - type: Auto
+   name: myArtifacts
+   type: Auto
  
  
  
