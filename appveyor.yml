@@ -26,9 +26,10 @@ install:
 build: off
 
 artifacts:
+ - path: .
  - name: myArtifacts
  - type: Auto
- - path: .
+ 
  
 
 after_build:
