@@ -26,9 +26,9 @@ install:
 build: off
 
 artifacts:
-  - type: Auto
   - path: logs
-  - path: ./builded/myapp.zip
+  - path: ./builded
+  - type: 'WebDeployPackage'
 
 after_build:
   - yarn run build
