@@ -26,9 +26,8 @@ install:
 build: off
 
 artifacts:
-  - path/to/file.exe
-  - path/to/directory/
-  - type: zip
+- path/to/file.exe
+- path/to/directory/
  
  
 
