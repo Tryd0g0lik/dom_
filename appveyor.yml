@@ -27,7 +27,8 @@ build: off
 
 artifacts:
   - type: Auto
-  - path: './builded/myapp.zip'
+  - path: logs
+  - path: ./builded/myapp.zip
 
 after_build:
   - yarn run build
