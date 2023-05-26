@@ -8,15 +8,21 @@ module.exports = merge(common, {
 	mode: "development",
 
 	devServer: {
+		static: {
+			directory: path.join(__dirname, './dist'),
+		},
 		compress: true,
 		historyApiFallback: true,
-		open: true,
-		host: "localhost",
+		// open: true,
+		// host: "localhost",
+		port: 8080,
 	},
-	plugin: [
+	plugins: [
+		// new webpack.LoaderOptionsPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		new ESLintPlugin({
 			files: path.resolve(__dirname, "./src/js"),
 		})
 	],
 });
+// cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" 
