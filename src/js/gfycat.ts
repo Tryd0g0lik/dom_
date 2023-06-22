@@ -1,14 +1,14 @@
 class Main {
-	table: HTMLTableElement | undefined;
+	table!: string;
 	constructor() {
 		this.table;
 		this.create_html_table();
 	}
 
-	create_html_table() {
-
+	create_html_table(): void {
 		let bodyTable: string = ``;
-		bodyTable = `
+		this.table = `
+		<table>
 		<tr id="row1">
 			<td></td><td></td><td></td><td></td>
 		</tr>
@@ -21,54 +21,82 @@ class Main {
 		<tr id="row4">
 			<td></td><td></td><td></td><td></td>
 		</tr>
+		</table>
 		`;
-
-		this.table = document.createElement('table');
-		this.table.innerHTML = bodyTable;
 
 	}
 
 }
 
 export class GamingInGobline extends Main {
-	constructor() {
+	static div: HTMLElement;
+	setId: any
+	col: number
+	int: number
+	constructor(int: number) {
 		super();
+		this.col = 0;
+		this.int = int
+
 	}
 
-
-	create_html_goblin() {
-		return "<img src='../pic/goblin.png'> "
+	create_html_goblin(): string {
+		return "<img src='../../pic/goblin.png'>"
 	}
 
-
-	insert_tableInto_page() {
-		let div: Element | null;
-		// Тип "HTMLTableRowElement | undefined
-		let t: string;
-		console.log(this.table)
-		let i: number = 0;
-		let table: HTMLTableElement | undefined = this.table;
-
-		// table.getElementsByTagName("tr")
-		// for i in
-		// 	t = this.table?.rows;
-		// console.log(t);
-		console.log("привет мир" + "---------------")
-		div = document.body.lastElementChild
-		// div?.append(String(t));
+	insert_tableInto_page(): void {
+		let t!: HTMLElement;
+		t = document.getElementsByTagName("div")[0] as HTMLElement
+		t.innerHTML = this.table
 	}
 
 	start_game() {
 		let max: undefined | number;
 		this.insert_tableInto_page();
 
-		let td;
-		// let td: undefined | [string];
-		td = document.getElementById("row1")
-			?.getElementsByTagName("td")
+		let tbl!: HTMLTableElement
+		let row!: HTMLCollectionOf<HTMLTableRowElement>
+		let td!: HTMLCollectionOf<HTMLTableCellElement>;
+
+		let row_len: number = 0
+		let td_len: number = 0
+
+
+		tbl = document.getElementsByTagName("table")[0]
+		row = tbl.getElementsByTagName('tr')
+
+		// while (col < int) {
+
+		let setId = setInterval(() => {
+
+			row_len = Math.floor(Math.random() * row.length)
+
+			td_len = Math.floor(Math.random() * row[row_len].cells.length)
+
+
+			if (row[row_len].cells[td_len].innerHTML === '') {
+				row[row_len].cells[td_len].innerHTML = this.create_html_goblin()
+				this.col += 1
+				setTimeout(() => row[row_len].cells[td_len].innerHTML = '', 800)
+			}
+			console.log('row_len: ' + String(row_len), td_len)
+			this.stopInterval(setId);
+
+		}, 1000)
+
+		return setId
 	}
+
+	stopInterval(ind: any) {
+		if (this.col === this.int) {
+
+			clearInterval(ind);
+		}
+	}
+
 }
 
+
 let block;
-block = new GamingInGobline();
+block = new GamingInGobline(6);
 block.start_game()

@@ -1,16 +1,18 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TsconfigPathPlugin = require("tsconfig-paths-webpack-plugin");
+const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
+
 require("webpack-dev-server");
-const isProduction = process.env.NODE_ENV == "production";
+// const isProduction = process.env.NODE_ENV == "production";
 
 module.exports = {
 	mode: 'none',
 	target: 'web',
 	entry: "./src/index.js",
+
   output: {
-    path: path.resolve(__dirname, "dist"),
+		path: path.resolve(__dirname, "dist"),
   },
 
 
@@ -40,7 +42,7 @@ module.exports = {
 
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset",
+				type: "asset/ressource",
       },
 
       // Add your rules for custom modules here
@@ -49,19 +51,13 @@ module.exports = {
 	},
 
 	plugins: [
-		new HtmlWebpackPlugin({
-			template: "./src/index.html",
-			filename: "./index.html",
-			minify: {
-				collapseWhitespace: false,
-			}
-		}),
 
 		new TsconfigPathPlugin({
 			configFile: "./tsconfig.json"
-		})
+		}),
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
+		new ImageminWebpWebpackPlugin()
 	],
 
   resolve: {
