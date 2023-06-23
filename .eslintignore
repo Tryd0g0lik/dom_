@@ -1,3 +1,5 @@
 ./src/index.ts
 .*
-webpack*
+*.js
+webpack
+!/src/js/*.js
