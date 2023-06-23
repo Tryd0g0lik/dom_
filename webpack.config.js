@@ -5,9 +5,9 @@ const TsconfigPathPlugin = require("tsconfig-paths-webpack-plugin");
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin"); // https://webpack.js.org/plugins/copy-webpack-plugin/
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+//Node:  HtmlWebpackPlugin() - расскоментировать чтоб запустить webpack.dev.js
+//Node:  HtmlWebpackPlugin() - закоментировать чтоб запустить webpack.prod.js
 require("webpack-dev-server");
-// const isProduction = process.env.NODE_ENV == "production";
 
 module.exports = {
 	mode: 'none',
@@ -68,14 +68,14 @@ module.exports = {
 		}),
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
-		// new ImageminWebpWebpackPlugin()
-		new HtmlWebpackPlugin({
-			template: "./src/index.html",
-			filename: "./index.html",
-			minify: {
-				collapseWhitespace: false,
-			}
-		}),
+
+		// new HtmlWebpackPlugin({
+		// 	template: "./src/index.html",
+		// 	filename: "./index.html",
+		// 	minify: {
+		// 		collapseWhitespace: false,
+		// 	}
+		// }),
 	],
 
   resolve: {
