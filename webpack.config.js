@@ -2,6 +2,8 @@
 const path = require("path");
 const TsconfigPathPlugin = require("tsconfig-paths-webpack-plugin");
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin"); // https://webpack.js.org/plugins/copy-webpack-plugin/
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 require("webpack-dev-server");
 // const isProduction = process.env.NODE_ENV == "production";
@@ -39,7 +41,6 @@ module.exports = {
 					},
 				]
 			},
-
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
 				type: "asset/ressource",
@@ -52,8 +53,17 @@ module.exports = {
 
 	plugins: [
 
+		new CopyPlugin({
+			patterns: [
+				{
+					from: './src/pic',
+					to: './pic'
+				}
+			]
+		}),
+
 		new TsconfigPathPlugin({
-			configFile: "./tsconfig.json"
+			configFile: "tsconfig.json"
 		}),
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
