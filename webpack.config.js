@@ -1,9 +1,10 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
+process.traceDeprecation = true;
 const path = require("path");
 const TsconfigPathPlugin = require("tsconfig-paths-webpack-plugin");
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin"); // https://webpack.js.org/plugins/copy-webpack-plugin/
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 require("webpack-dev-server");
 // const isProduction = process.env.NODE_ENV == "production";
@@ -63,11 +64,18 @@ module.exports = {
 		}),
 
 		new TsconfigPathPlugin({
-			configFile: "tsconfig.json"
+			configFile: "./tsconfig.json"
 		}),
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
-		new ImageminWebpWebpackPlugin()
+		// new ImageminWebpWebpackPlugin()
+		new HtmlWebpackPlugin({
+			template: "./src/index.html",
+			filename: "./index.html",
+			minify: {
+				collapseWhitespace: false,
+			}
+		}),
 	],
 
   resolve: {
