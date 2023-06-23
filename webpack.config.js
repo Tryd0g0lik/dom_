@@ -7,6 +7,7 @@ const CopyPlugin = require("copy-webpack-plugin"); // https://webpack.js.org/plu
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 //Node:  HtmlWebpackPlugin() - расскоментировать чтоб запустить webpack.dev.js
 //Node:  HtmlWebpackPlugin() - закоментировать чтоб запустить webpack.prod.js
+
 require("webpack-dev-server");
 
 module.exports = {
