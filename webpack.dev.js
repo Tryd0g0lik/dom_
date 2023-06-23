@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.config");
 const ESLintPlugin = require("eslint-webpack-plugin");
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 // const { SourceMapDevToolPlugin } = require("webpack");
 
 module.exports = merge(common, {
@@ -28,7 +28,7 @@ module.exports = merge(common, {
 		}),
 		new HtmlWebpackPlugin({
 			template: "./src/index.html",
-			filename: "./index.html",
+			// filename: "./index.html",
 			minify: {
 				collapseWhitespace: false,
 			}

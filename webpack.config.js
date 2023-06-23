@@ -3,7 +3,7 @@ const path = require("path");
 const TsconfigPathPlugin = require("tsconfig-paths-webpack-plugin");
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin"); // https://webpack.js.org/plugins/copy-webpack-plugin/
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 require("webpack-dev-server");
 // const isProduction = process.env.NODE_ENV == "production";
