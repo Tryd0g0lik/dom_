@@ -1,40 +1,29 @@
 version: 1.1.{build}-{branch}
 
-
-
 image:
  - Visual Studio 2019
-
-platform:
-  - x64
-  # - x86
 
 init:
   - git config --global core.autocrlf input
 
 stack: node 18.12.0
 
-cache:
-  - node_modules
-
-install:
- - yarn
-
-build: off
-
-
-deploy: off
-
 branches:
   only:
-    - master
+    - master  # ветка git
 
-artifacts:
-  - path: '\dist/to/file.exe\'
+cache: node_modules  # кеширование
 
+install:
+  - yarn  # команда установки зависимостей
+
+build: off  # отключаем встроенную в appveyor систему сборки
 
 build_script:
-  - yarn run build
+  - yarn run build   # команда сборки
+
+test_script:
+  - yarn run lint # && yarn run test  # скрипт тестирования
 
 deploy_script:  # скрипт развёртывания
 # Конкретно шаг развертывания выполняется вот этим скриптом:
