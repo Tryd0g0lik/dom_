@@ -8,7 +8,6 @@ image:
 platform:
   - x64
   # - x86
-  # - amd64
 
 init:
   - git config --global core.autocrlf input
