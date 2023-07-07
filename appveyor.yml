@@ -27,7 +27,7 @@ deploy: off
 
 branches:
   only:
-    - v1
+    - master
 
 artifacts:
   - path: '\dist/to/file.exe\'
