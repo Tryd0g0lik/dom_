@@ -12,10 +12,8 @@ module.exports = {
 	overrides: [
 	],
 	parserOptions: {
-
 		ecmaVersion: 'latest',
 		sourceType: 'module',
-
 	},
 	rules: {
 		'no-tabs': 0,
