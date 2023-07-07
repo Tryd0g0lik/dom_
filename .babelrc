@@ -1,4 +1,4 @@
-{ // fromthe polyfill
+{
 	"plugins": [
 		"@babel/syntax-dynamic-import"
 	],
