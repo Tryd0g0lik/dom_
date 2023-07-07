@@ -65,14 +65,9 @@ export class GamingInGobline extends Main {
 		tbl = document.getElementsByTagName("table")[0]
 		row = tbl.getElementsByTagName('tr')
 
-		// while (col < int) {
-
 		let setId = setInterval(() => {
-
 			row_len = Math.floor(Math.random() * row.length)
-
 			td_len = Math.floor(Math.random() * row[row_len].cells.length)
-
 
 			if (row[row_len].cells[td_len].innerHTML === '') {
 				row[row_len].cells[td_len].innerHTML = this.create_html_goblin()
