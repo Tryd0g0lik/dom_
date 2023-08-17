@@ -14,7 +14,7 @@ cache:
   - node_modules
 
 install:
- - yarn add
+ - yarn
 
 build: off
 
