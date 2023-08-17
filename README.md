@@ -1,4 +1,5 @@
-[![текущее состояние](https://ci.appveyor.com/api/projects/status/8nx7injxf5emvv8e?svg=true)]
+[![Build status](https://ci.appveyor.com/api/projects/status/j0khiapxc9d22g1y?svg=true)](https://ci.appveyor.com/project/Tryd0g0lik/dom-netologe-g28hn)
+[![Build status](https://ci.appveyor.com/api/projects/status/j0khiapxc9d22g1y/branch/master?svg=true)](https://ci.appveyor.com/project/Tryd0g0lik/dom-netologe-g28hn/branch/master)
 
 # Домашнее задание к занятию "2. DOM"
 
