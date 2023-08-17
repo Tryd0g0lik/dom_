@@ -1,2 +1,2 @@
-import "./js/gfycat.ts";
-// import "./index.html";
+import "./js/main.ts";
+import "./styles/style.css";

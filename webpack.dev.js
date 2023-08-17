@@ -3,16 +3,15 @@ const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.config");
 const ESLintPlugin = require("eslint-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-// HtmlWebpackPlugin() - закомментирован
+
 
 module.exports = merge(common, {
 	mode: "development",
-	devtool: 'source-map',//'cheap-module-source-map',
+	devtool: 'source-map',
 
 	devServer: {
 		static: {
-			directory: path.join(__dirname, './dist'),
+			directory: path.join(__dirname, 'dist'),
 		},
 		compress: true,
 		historyApiFallback: true,
@@ -26,13 +25,7 @@ module.exports = merge(common, {
 		new ESLintPlugin({
 			files: path.resolve(__dirname, "./src/js"),
 		}),
-		// new HtmlWebpackPlugin({
-		// 	template: "./src/index.html",
-		// 	filename: "./index.html",
-		// 	minify: {
-		// 		collapseWhitespace: false,
-		// 	}
-		// }),
+
 	],
 });
 // cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\"

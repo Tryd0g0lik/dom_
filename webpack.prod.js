@@ -7,6 +7,7 @@ module.exports = merge(common, {
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: './src/index.html',
+
 			// filename: './[name].html',
 			minify: {
 				collapseWhitespace: true,
