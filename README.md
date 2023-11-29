@@ -2,7 +2,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/j0khiapxc9d22g1y/branch/master?svg=true)](https://ci.appveyor.com/project/Tryd0g0lik/dom-netologe-g28hn/branch/master)
 
 
-### Перемещение элемента
+### Игра от скуки
 
 Решил развлечься и реализовать некое подобие игры, где гномы (или другие существа), выскакивают из "отверстий" и по ним нужно бить молотком:
 
